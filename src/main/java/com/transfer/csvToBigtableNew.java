@@ -27,8 +27,6 @@ public class csvToBigtableNew implements HttpFunction {
 
   public  void setupEnv() throws Exception {
     String datasetName = "iShare_test_DataSet";
-    //String tableName = "sampleTable1";
-    //String datasetName = "sampleDataset";
     String tableName = "csvDataTable";
     String sourceUri = "gs://isharetestbucket/t2.csv";
     loadCsvFromGcs(datasetName, tableName, sourceUri);
