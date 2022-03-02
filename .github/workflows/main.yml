@@ -22,7 +22,7 @@ jobs:
       id: deploy
       uses: google-github-actions/deploy-cloud-functions@v0
       with:
-          name: com.transfer.csvToBigtable
+          name: csvToBigtable
           runtime: java11
     - name: test the url
       run: curl "${{ steps.deploy.outputs.url }}"
