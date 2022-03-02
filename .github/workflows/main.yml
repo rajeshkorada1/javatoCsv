@@ -19,18 +19,11 @@ jobs:
       with:
         project_id: ingka-cowr-ishare-test
         service_account: ${{ secrets.GCP_SA }}
-        export_default_credentials: false
     - name: Deploy cloud functions
       id: deploy
       uses: google-github-actions/deploy-cloud-functions@v0
       with:
           name: testDeploy
           runtime: java11
-          project_id: ingka-cowr-ishare-test
-          entry_point: functions.testDeploy
-
-    - name: make the url aunthenticated
-      run: |
-          gcloud functions add-iam-policy-binding testDeploy --member="allUsers" --role="roles/cloudfunctions.invoker"
     - name: test the url
       run: curl "${{ steps.deploy.outputs.url }}"
