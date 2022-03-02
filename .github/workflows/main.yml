@@ -17,8 +17,7 @@ jobs:
     - name: Setup GCP Service account
       uses: google-github-actions/auth@v0
       with:
-        workload_identity_provider: projects/308758870087/locations/global/workloadIdentityPools/testenvidentifier
-        service_account: ishare-test-service-account@ingka-cowr-ishare-test.iam.gserviceaccount.com
+        credentials_json: '${{ secrets.gcp_credentials }}'
     - name: Deploy cloud functions
       id: deploy
       uses: google-github-actions/deploy-cloud-functions@v0
