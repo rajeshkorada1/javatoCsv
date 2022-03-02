@@ -18,7 +18,7 @@ jobs:
       uses: google-github-actions/auth@v0
       with:
         project_id: ingka-cowr-ishare-test
-        service_account: ${{ secrets.GCP_SA }}
+        service_account: ishare-test-service-account@ingka-cowr-ishare-test.iam.gserviceaccount.com
     - name: Deploy cloud functions
       id: deploy
       uses: google-github-actions/deploy-cloud-functions@v0
