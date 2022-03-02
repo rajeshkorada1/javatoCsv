@@ -15,7 +15,7 @@ jobs:
     - name: Build project with Maven
       run: mvn -B package --file pom.xml
     - name: Setup GCP Service account
-      uses: google-github-actions/setup-gcloud@master
+      uses: google-github-actions/setup-gcloud@main
       with:
         project_id: ingka-cowr-ishare-test
         service_account_key: ${{ secrets.GCP_SA }}
